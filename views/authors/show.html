@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- file: views/professor/index.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Esteban Espinoza Fallas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{{title}} - Practica #2 PW Esteban Espinoza Fallas</title>
+</head>
+
+<body>
+    {{> navbar}}
+    <div class="container">
+        <div class="row">
+            {{#author}}
+            <div class="col s12 center-align">
+                <h1>{{author}}</h1>
+            </div>
+            <div class="col m6 center-align"><img src="../../{{picture}}" style="max-height: 500px;"></div>
+            <div class="col m6">
+                <dl>
+                    <dt>Id</dt>
+                    <dd>{{id}}</dd>
+                    <dt>Author</dt>
+                    <dd>{{author}}</dd>
+                    <dt>Nationality</dt>
+                    <dd>{{nationality}}</dd>
+                    <dt>Birth Year</dt>
+                    <dd>{{birth_year}}</dd>
+                    <dt>Fields</dt>
+                    <dd>{{fields}}</dd>
+                    <dt>Books</dt>
+                    {{#books}}
+                    <dd><a href="/books/{{books__book_id}}">{{books__title}}</a></dd>
+                    {{/books}}
+                </dl>
+            </div>
+            {{/author}}
+        </div>
+        <a class="waves-effect waves-light btn-large" href="/">BACK</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
